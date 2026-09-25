@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewelry Budget Planner - PocketSmart AI</title>
+</head>
+<body>
+
+    <h1>Jewelry Budget Planner</h1>
+
+    <p>Welcome, {{ user.username }}!</p>
+
+    <form action="/generate-jewelry" method="post" enctype="multipart/form-data">
+
+        <label>Budget:</label><br>
+        <input type="number" name="budget" min="1" required>
+        <br><br>
+
+        <label>Occasion:</label><br>
+        <input type="text" name="occasion"
+               placeholder="Wedding, Birthday, Festival..."
+               required>
+        <br><br>
+
+        <label>Style Preference:</label><br>
+        <input type="text" name="style_preference"
+               placeholder="Traditional, Modern, Minimal..."
+               required>
+        <br><br>
+
+        <label>Metal Preference:</label><br>
+        <select name="metal_preference">
+            <option value="Any">Any</option>
+            <option value="Gold">Gold</option>
+            <option value="Silver">Silver</option>
+            <option value="Rose Gold">Rose Gold</option>
+            <option value="Platinum">Platinum</option>
+        </select>
+        <br><br>
+
+        <label>Upload Outfit Image (Optional):</label><br>
+        <input type="file" name="outfit_image" accept="image/*">
+        <br><br>
+
+        <button type="submit">Get Recommendation</button>
+
+    </form>
+
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

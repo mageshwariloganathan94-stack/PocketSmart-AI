@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendation History - PocketSmart AI</title>
+</head>
+<body>
+
+    <h1>Recommendation History</h1>
+
+    <p>Welcome, {{ user.username }}!</p>
+
+    {% if history %}
+        <ul>
+        {% for item in history %}
+            <li>{{ item }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recommendation history available.</p>
+    {% endif %}
+
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

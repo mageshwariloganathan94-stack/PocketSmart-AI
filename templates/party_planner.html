@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Party Planner - PocketSmart AI</title>
+</head>
+<body>
+
+    <h1>Party Planner</h1>
+
+    <p>Welcome, {{ user.username }}!</p>
+
+    <form action="/generate-party" method="post">
+
+        <label>Budget:</label><br>
+        <input type="number" name="budget" min="1" required>
+        <br><br>
+
+        <label>Number of Guests:</label><br>
+        <input type="number" name="guest_count" min="1" required>
+        <br><br>
+
+        <label>Event Type:</label><br>
+        <input type="text" name="event_type"
+               placeholder="Birthday, Wedding, Anniversary..."
+               required>
+        <br><br>
+
+        <label>Venue Details:</label><br>
+        <input type="text" name="venue_details"
+               placeholder="Home, Hall, Outdoor..."
+               required>
+        <br><br>
+
+        <label>Special Notes:</label><br>
+        <textarea name="special_notes"
+                  placeholder="Food, decoration, theme, etc."></textarea>
+        <br><br>
+
+        <button type="submit">Get Recommendation</button>
+
+    </form>
+
+    <br>
+    <a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

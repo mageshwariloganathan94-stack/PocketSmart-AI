@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ planner_title }} Recommendation - PocketSmart AI</title>
+</head>
+
+<body>
+
+    <h1>{{ planner_title }} Recommendation</h1>
+
+    <p>Welcome, {{ user.username }}!</p>
+
+    {% if result %}
+        <h2>Recommendation Summary</h2>
+
+        {% if result.summary %}
+            <p>{{ result.summary }}</p>
+        {% endif %}
+
+        {% if result.total_cost %}
+            <p>
+                <strong>Estimated Total Cost:</strong>
+                {{ result.total_cost }}
+            </p>
+        {% endif %}
+
+        {% if result.recommendations %}
+            <h2>Recommended Items</h2>
+
+            <ul>
+            {% for item in result.recommendations %}
+                <li>
+                    {% if item is mapping %}
+                        {% for key, value in item.items() %}
+                            <strong>{{ key }}:</strong> {{ value }}<br>
+                        {% endfor %}
+                    {% else %}
+                        {{ item }}
+                    {% endif %}
+                </li>
+            {% endfor %}
+            </ul>
+        {% endif %}
+
+    {% else %}
+        <p>No recommendation was generated.</p>
+    {% endif %}
+
+    <br>
+
+    <a href="/home-planner">Back to Home Planner</a>
+    <br><br>
+    <a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

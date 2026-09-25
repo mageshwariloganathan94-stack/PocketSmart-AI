@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Interior Planner - PocketSmart AI</title>
+</head>
+<body>
+
+    <h1>Home Interior Planner</h1>
+
+    <p>Welcome, {{ user.username }}!</p>
+
+    <form action="/generate-home" method="post">
+
+        <label>Budget:</label><br>
+        <input type="number" name="budget" min="1" required>
+        <br><br>
+
+        <label>Room Types:</label><br>
+        <input type="text"
+               name="room_types"
+               placeholder="Living Room, Bedroom"
+               required>
+        <br><br>
+
+        <label>Style Preference:</label><br>
+        <input type="text"
+               name="style_preference"
+               value="Modern Contemporary">
+        <br><br>
+
+        <label>Living Room Lights:</label><br>
+        <input type="number"
+               name="living_room_lights"
+               value="0"
+               min="0">
+        <br><br>
+
+        <label>Ceiling Fans:</label><br>
+        <input type="number"
+               name="ceiling_fans"
+               value="0"
+               min="0">
+        <br><br>
+
+        <label>Dining Tables:</label><br>
+        <input type="number"
+               name="dining_tables"
+               value="0"
+               min="0">
+        <br><br>
+
+        <button type="submit">Get Recommendation</button>
+
+    </form>
+
+    <br>
+
+    <a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>

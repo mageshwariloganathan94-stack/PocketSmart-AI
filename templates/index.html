@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PocketSmart AI</title>
+</head>
+<body>
+
+    <h1>Welcome to PocketSmart AI</h1>
+
+    {% if user %}
+        <p>Welcome, {{ user.username }}!</p>
+        <p><a href="/dashboard">Go to Dashboard</a></p>
+        <p><a href="/logout">Logout</a></p>
+    {% else %}
+        <p>Please login or create an account.</p>
+        <p><a href="/login">Login</a></p>
+        <p><a href="/register">Register</a></p>
+    {% endif %}
+
+</body>
+</html>
